@@ -94,15 +94,32 @@ namespace senai.gerir.api.Repositorios
 
         public List<Tarefa> ListarTodos(Guid IdUsuario)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var listatarefas = _context.Tarefas.Where(c => c.UsuarioId == IdUsuario).ToList();
+                return listatarefas;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
         }
 
         public void Remover(Guid IdTarefa)
         {
-            var tarefa = BuscarPorId(IdTarefa);
+            try
+            {
+                Tarefa tarefa = BuscarPorId(IdTarefa);
 
-            _context.Tarefas.Remove(tarefa);
-            _context.SaveChanges();
+                _context.Tarefas.Remove(tarefa);
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
         }
     }
 }
