@@ -1,0 +1,407 @@
+{
+	"info": {
+		"_postman_id": "15cec0c8-d83e-4ffb-96d5-b772ecc8f956",
+		"name": "Api Gerir",
+		"description": "Documentação da Api Gerir.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "Post - api/usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\" : \"Luis\",\r\n    \"email\" : \"luis@email.com\",\r\n    \"senha\" : \"123456\",\r\n    \"tipo\": \"Comum\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlhost}}/api/usuario",
+							"host": [
+								"{{urlhost}}"
+							],
+							"path": [
+								"api",
+								"usuario"
+							]
+						},
+						"description": "Cadastra um novo usuário."
+					},
+					"response": []
+				},
+				{
+					"name": "Post - api/usuario/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"gustavo@email.com\",\r\n    \"senha\" : \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlhost}}/api/usuario/login",
+							"host": [
+								"{{urlhost}}"
+							],
+							"path": [
+								"api",
+								"usuario",
+								"login"
+							]
+						},
+						"description": "Endpoint para o usuário efetuar o login"
+					},
+					"response": []
+				},
+				{
+					"name": "Get - api/usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmYW1pbHlfbmFtZSI6Ikx1aXMiLCJlbWFpbCI6Imx1aXNAZW1haWwuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQ29tdW0iLCJqdGkiOiJhMDA4MTE3Zi0xZDZlLTQ3OWItYjIxZS1mYmY4ZmE5MmZhMWQiLCJleHAiOjE2MTAwMzk5NjQsImlzcyI6ImdlcmlyLmNvbS5iciIsImF1ZCI6ImdlcmlyLmNvbS5iciJ9.QvHvMqxzcaN1nZn4jBbL3oQ_Nzc8qRDNomz33HiIKOE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlhost}}/api/usuario",
+							"host": [
+								"{{urlhost}}"
+							],
+							"path": [
+								"api",
+								"usuario"
+							]
+						},
+						"description": "Busca as informações por id."
+					},
+					"response": []
+				},
+				{
+					"name": "Put - api/usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmYW1pbHlfbmFtZSI6Ikd1c3Rhdm8iLCJlbWFpbCI6Imd1c3Rhdm9AZW1haWwuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQ29tdW0iLCJqdGkiOiI0OWE5Yjg3Yy00ZWYyLTQxOTItYTFhZC0xZjlhN2MyODFiYjgiLCJleHAiOjE2MDk5NjI5MTksImlzcyI6ImdlcmlyLmNvbS5iciIsImF1ZCI6ImdlcmlyLmNvbS5iciJ9.9qWDdRUAmWOZae060m_3Jgt5Lebne7F43yxFZ7emOxQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\" : \"Gustavo Dias\",\r\n    \"email\" : \"gustavo@email.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlhost}}/api/usuario",
+							"host": [
+								"{{urlhost}}"
+							],
+							"path": [
+								"api",
+								"usuario"
+							]
+						},
+						"description": "Altera os dados de um usuário."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete - api/usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmYW1pbHlfbmFtZSI6Ikx1aXMiLCJlbWFpbCI6Imx1aXNAZW1haWwuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQ29tdW0iLCJqdGkiOiJhMDA4MTE3Zi0xZDZlLTQ3OWItYjIxZS1mYmY4ZmE5MmZhMWQiLCJleHAiOjE2MTAwMzk5NjQsImlzcyI6ImdlcmlyLmNvbS5iciIsImF1ZCI6ImdlcmlyLmNvbS5iciJ9.QvHvMqxzcaN1nZn4jBbL3oQ_Nzc8qRDNomz33HiIKOE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlhost}}/api/usuario",
+							"host": [
+								"{{urlhost}}"
+							],
+							"path": [
+								"api",
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tarefas",
+			"item": [
+				{
+					"name": "Post - api/tarefa",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmYW1pbHlfbmFtZSI6Ikd1c3Rhdm8gRGlhcyIsImVtYWlsIjoiZ3VzdGF2b0BlbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJDb211bSIsImp0aSI6IjQ5YTliODdjLTRlZjItNDE5Mi1hMWFkLTFmOWE3YzI4MWJiOCIsImV4cCI6MTYxMDEwNTU1MywiaXNzIjoiZ2VyaXIuY29tLmJyIiwiYXVkIjoiZ2VyaXIuY29tLmJyIn0.R8ZHSBdOr3pZ8MQ2vPfhKcGvdvXTtXm86Xd-30XUd7c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\" : \"tarefa 1\",\r\n    \"descricao\" : \"descrição tarefa 1\",\r\n    \"categoria\": \"Pessoal\",\r\n    \"DataEntrega\" : \"2021-01-12T12:30:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlhost}}/api/tarefa",
+							"host": [
+								"{{urlhost}}"
+							],
+							"path": [
+								"api",
+								"tarefa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put - api/tarefa/{IdTarefa}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmYW1pbHlfbmFtZSI6Ikd1c3Rhdm8gRGlhcyIsImVtYWlsIjoiZ3VzdGF2b0BlbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJDb211bSIsImp0aSI6IjQ5YTliODdjLTRlZjItNDE5Mi1hMWFkLTFmOWE3YzI4MWJiOCIsImV4cCI6MTYxMDExMjE5MCwiaXNzIjoiZ2VyaXIuY29tLmJyIiwiYXVkIjoiZ2VyaXIuY29tLmJyIn0.ZQTFli6vmu-ODV7h2yebXhCRnjvagxpc7l7Ph3zDpzo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"IdTarefa\" : \"53848EA7-13CC-41E3-B9F8-7B88FF231C6A\",\r\n  \"titulo\": \"Titulo da tarefa2\",\r\n  \"descricao\": \"Descricao da tarefa\",\r\n  \"categoria\": \"Teste\",\r\n  \"dataEntrega\": \"2021-01-07T13:21:39.918Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlhost}}/api/tarefa/53848EA7-13CC-41E3-B9F8-7B88FF231C6A",
+							"host": [
+								"{{urlhost}}"
+							],
+							"path": [
+								"api",
+								"tarefa",
+								"53848EA7-13CC-41E3-B9F8-7B88FF231C6A"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete - api/tarefa",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmYW1pbHlfbmFtZSI6Ikd1c3Rhdm8gRGlhcyIsImVtYWlsIjoiZ3VzdGF2b0BlbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJDb211bSIsImp0aSI6IjQ5YTliODdjLTRlZjItNDE5Mi1hMWFkLTFmOWE3YzI4MWJiOCIsImV4cCI6MTYxMDExMjE5MCwiaXNzIjoiZ2VyaXIuY29tLmJyIiwiYXVkIjoiZ2VyaXIuY29tLmJyIn0.ZQTFli6vmu-ODV7h2yebXhCRnjvagxpc7l7Ph3zDpzo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{urlhost}}/api/tarefa/2A5D1674-58BE-4C6B-9DAA-8176BC3ABC6B",
+							"host": [
+								"{{urlhost}}"
+							],
+							"path": [
+								"api",
+								"tarefa",
+								"2A5D1674-58BE-4C6B-9DAA-8176BC3ABC6B"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put - api/tarefa/status{IdTarefa}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmYW1pbHlfbmFtZSI6Ikd1c3Rhdm8gRGlhcyIsImVtYWlsIjoiZ3VzdGF2b0BlbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJDb211bSIsImp0aSI6IjQ5YTliODdjLTRlZjItNDE5Mi1hMWFkLTFmOWE3YzI4MWJiOCIsImV4cCI6MTYxMDEwNjg4OCwiaXNzIjoiZ2VyaXIuY29tLmJyIiwiYXVkIjoiZ2VyaXIuY29tLmJyIn0.oG0XXYcGB1OUIM719qDaj0o52Who0F-vkzCbuxkEkQY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlhost}}/api/tarefa/status/1F171308-945D-4866-91B8-5CD691F97F97",
+							"host": [
+								"{{urlhost}}"
+							],
+							"path": [
+								"api",
+								"tarefa",
+								"status",
+								"1F171308-945D-4866-91B8-5CD691F97F97"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get - api/tarefa/{IdTarefa}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmYW1pbHlfbmFtZSI6Ikd1c3Rhdm8gRGlhcyIsImVtYWlsIjoiZ3VzdGF2b0BlbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJDb211bSIsImp0aSI6IjQ5YTliODdjLTRlZjItNDE5Mi1hMWFkLTFmOWE3YzI4MWJiOCIsImV4cCI6MTYxMDEwOTI5MywiaXNzIjoiZ2VyaXIuY29tLmJyIiwiYXVkIjoiZ2VyaXIuY29tLmJyIn0.1z9Hyx3uHb-atMz1AlnR61GRuKn4qK979jZlLYzNApI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlhost}}/api/tarefa/1F171308-945D-4866-91B8-5CD691F97F97",
+							"host": [
+								"{{urlhost}}"
+							],
+							"path": [
+								"api",
+								"tarefa",
+								"1F171308-945D-4866-91B8-5CD691F97F97"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get - api/tarefa/lista",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmYW1pbHlfbmFtZSI6Ikd1c3Rhdm8gRGlhcyIsImVtYWlsIjoiZ3VzdGF2b0BlbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJDb211bSIsImp0aSI6IjQ5YTliODdjLTRlZjItNDE5Mi1hMWFkLTFmOWE3YzI4MWJiOCIsImV4cCI6MTYxMDEwNjg4OCwiaXNzIjoiZ2VyaXIuY29tLmJyIiwiYXVkIjoiZ2VyaXIuY29tLmJyIn0.oG0XXYcGB1OUIM719qDaj0o52Who0F-vkzCbuxkEkQY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlhost}}/api/tarefa",
+							"host": [
+								"{{urlhost}}"
+							],
+							"path": [
+								"api",
+								"tarefa"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "urlhost",
+			"value": "http://localhost:63095"
+		}
+	]
+}
