@@ -79,6 +79,8 @@ namespace senai.gerir.api.Repositorios
 
                 tarefaexiste.Titulo = tarefa.Titulo;
                 tarefaexiste.Descricao = tarefa.Descricao;
+                tarefaexiste.DataEntrega = tarefa.DataEntrega;
+                tarefaexiste.Categoria = tarefa.Categoria;
 
                 _context.Tarefas.Update(tarefaexiste);
                 _context.SaveChanges();
